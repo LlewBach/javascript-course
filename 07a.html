@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>07a</title>
+  </head>
+  <body>
+    <script>
+      function greet(name) {
+        if (!name) {
+          console.log('Hi there!');
+        } else {
+          console.log(`Hello ${name}!`);
+        }
+      } 
+
+      greet('Gareth');
+      greet('Sky');
+      greet('Bajjo');
+      greet();
+
+
+      function convertToFarenheit(celsius) {
+        return (celsius * 9 / 5) + 32;
+      }
+      console.log(convertToFarenheit(25));
+
+      function convertToCelsius(farenheit) {
+        return (farenheit - 32) * 5 / 9;
+      }
+      console.log(convertToCelsius(86));
+
+      function convertTemperature(degrees, unit) {
+        if (unit === 'C') {
+          return convertToFarenheit(degrees) + 'F';
+        }
+        if (unit === 'F') {
+          return convertToCelsius(degrees) + 'C';
+        }
+      }
+
+      console.log(convertTemperature(25, 'C'));
+      console.log(typeof(convertTemperature(86, 'F')));
+
+    </script>
+  </body>
+</html>
