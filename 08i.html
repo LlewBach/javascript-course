@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Coin Toss</title>
+</head>
+<body>
+  <button onclick="
+    play('heads');  
+  ">Heads</button>
+  <button onclick="
+    play('tails');
+  ">Tails</button>
+  <button onclick="
+    score.wins = 0;
+    score.losses = 0;
+    localStorage.setItem('score1', JSON.stringify(score));
+    console.log(score);
+  ">Reset</button>
+
+
+  <script>
+    const score = JSON.parse(localStorage.getItem('score1')) || {
+      wins: 0,
+      losses: 0
+    }
+
+    function play(choice) {
+      // Choice
+      console.log(`Your guess is ${choice}`);
+      // Toss
+      const randomNum = Math.random();
+      let result = '';
+      randomNum < 0.5 ? result = 'heads' : result = 'tails';
+      console.log(`The result is ${result}`);
+      // Result
+      if (choice === result) {
+        score.wins ++;
+        localStorage.setItem('score1', JSON.stringify(score));
+        console.log('You win!');
+        console.log(score);
+      } else {
+        score.losses ++;
+        localStorage.setItem('score1', JSON.stringify(score));
+        console.log('You lose!');
+        console.log(score);
+      }
+    }
+
+  </script>
+</body>
+</html>
