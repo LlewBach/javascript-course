@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/10i-calc.css">
+  <title>myCalc</title>
+</head>
+<body>
+  <div class="calc-outline">
+    <div class="answer-box">
+    </div>
+    <div class="num-grid">
+      <button onclick="
+        addCharacter(1);
+        ">1</button>
+      <button onclick="
+        addCharacter(2);
+      ">2</button>
+      <button onclick="
+        addCharacter(3);
+      ">3</button>
+      <button class="yellow-column" onclick="
+      addCharacter(' + ');
+      ">+</button>
+      <button onclick="
+        addCharacter(4);
+      ">4</button>
+      <button onclick="
+        addCharacter(5);
+      ">5</button>
+      <button onclick="
+        addCharacter(6);
+      ">6</button>
+      <button class="yellow-column" onclick="
+      addCharacter(' - ');
+      ">-</button>
+      <button onclick="
+        addCharacter(7);
+      ">7</button>
+      <button onclick="
+        addCharacter(8);
+      ">8</button>
+      <button onclick="
+        addCharacter(9);
+      ">9</button>
+      <button class="yellow-column" onclick="
+      addCharacter(' * ');
+      ">x</button>
+      <button onclick="
+        addCharacter(0);
+      ">0</button>
+      <button onclick="
+        addCharacter('.');
+      "></button>
+      <button onclick="
+        document.querySelector('.answer-box').textContent = calculation + ' = ' + eval(calculation);
+        calculation = eval(calculation);
+      ">=</button>
+      <button class="yellow-column" onclick="
+        addCharacter(' / ');
+      ">/</button>
+      <button class="clear-button" onclick="
+        calculation = ''
+        localStorage.setItem('calculation', calculation);
+        updateScreen();
+      ">Clear</button>
+      
+
+    </div>
+  </div>
+
+  <script src="scripts/10i-calc.js"></script>
+  
+</body>
+</html>

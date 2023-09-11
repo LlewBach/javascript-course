@@ -11,6 +11,7 @@
     Subscribe
   </button>
 
+
   <p>Amazon Shipping Calculator</p>
   <input class="js-cost-input" placeholder="Cost of order"  onkeydown="
     handleCostKeyDown(event);
@@ -20,31 +21,44 @@
   ">Calculate</button>
   <p class="js-total-cost"></p>
 
-	<script>
-    
 
+
+  <input class="js-text-input" placeholder="Type something..." onkeyup="
+    handleKeyUp(event);
+  "> 
+  <p class="js-text-paragraph"></p>
+
+	<script>
+// Typebox
+    function handleKeyUp(event) {
+      let inputText = document.querySelector('.js-text-input').value;
+      document.querySelector('.js-text-paragraph').innerHTML = inputText;
+    }
+   
+   
+   
+   
+   
+// Amazon
     function handleCostKeyDown(event) {
       if (event.key === 'Enter') {
       calculateTotal();
       }
     }
 
-
     function calculateTotal() {
       const inputElement = document.querySelector('.js-cost-input');
       let cost = Number(inputElement.value);
       let costInCents = cost * 100;
-
       if (costInCents < 4000) {
         cost = (costInCents + 1000) / 100;
       }
-
       document.querySelector('.js-total-cost')
         .innerHTML = `$${cost}`;
-
     }
 
 
+// YouTube
     function subscribe() {
       const buttonElement = document.querySelector('.js-subscribe-button');
       console.log(buttonElement);
