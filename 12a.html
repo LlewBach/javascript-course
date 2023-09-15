@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>12a</title>
+  </head>
+  <body>
+
+    <button class="js-start-button">Start</button>
+    <p></p>
+
+    <button class="js-cart-button">Add to cart</button>
+    <p class="js-added-message"></p>
+    
+    <button class="js-add-button">Add</button>
+    <button class="js-remove-button">Remove</button>
+
+    <script>
+      document.querySelector('.js-start-button')
+        .addEventListener('click', startFun);
+
+      document.querySelector('.js-cart-button')
+        .addEventListener('click', showMessage);
+
+      document.querySelector('.js-add-button')
+        .addEventListener('click', () => {
+          messages++;
+          updateTitle();
+        });
+
+      document.querySelector('.js-remove-button')
+        .addEventListener('click', () => {
+          if (messages > 0) {
+            messages--;
+            updateTitle();
+          }
+        });
+
+
+
+      let messages = 1;
+      let intervalId1;
+      updateTitle();
+
+      function updateTitle() {
+        clearInterval(intervalId1);
+        if (messages === 0) {
+          document.title = 'App';
+        } else {
+          intervalId1 = setInterval(() => {
+            if (document.title === 'App') {
+              document.title = `(${messages}) New messages`;
+            } else {
+              document.title = 'App';
+            }
+          }, 1000);
+        }
+      }
+
+      
+      
+      
+
+
+
+
+      
+      let timeoutId;
+
+      function showMessage() {
+        const para = document.querySelector('.js-added-message');
+
+        if (para.innerHTML !== 'Added') {
+          para.innerHTML = 'Added';
+        }
+
+          clearTimeout(timeoutId);
+          timeoutId = setTimeout(() => {
+          para.innerHTML = '';
+        }, 2000);       
+      }
+      
+
+
+      /*function add() {
+        console.log(2 + 3);
+      }
+      add();
+      add();
+
+      function runTwice(fun) {
+        fun();
+        fun();
+      }
+
+      runTwice(function() {
+        console.log('12b');
+      });
+
+      runTwice(add);
+      */
+
+      
+      function startFun() {
+        const startButton = document.querySelector('.js-start-button');
+        startButton.innerHTML = 'Loading...';
+        setTimeout(() => {
+          startButton.innerHTML = 'Finished';
+        }, 1000);
+      }
+      
+
+    </script>
+  </body>
+</html>

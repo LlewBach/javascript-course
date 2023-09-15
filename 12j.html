@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>12j</title>
+  </head>
+  <body>
+    <script>
+      const multiply = (one, two) => one * two;
+
+      console.log(multiply(7, 10));
+
+      function countPositive(nums) {
+        let accumulator = 0;
+        nums.forEach(val => {
+          if (val > 0) {
+            accumulator++;
+          }
+        });
+        return accumulator;
+      }
+
+      console.log(countPositive([-2, 3, -5, 7, 10]));
+
+      function addNum(arr, num) {
+        return arr.map(x => x + num);
+      }
+      console.log(addNum([1, 2, 3], 2));
+
+      function removeEgg(foods) {
+        return foods.filter(x => x !== 'egg');
+      }
+    
+      console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));
+
+      function removeTwoEggs(foods) {
+        let counter = 0;
+        return foods.filter(x => {
+          if (x === 'egg' && counter < 2) {
+            counter++;
+            return false;
+          }
+          return true;
+        });
+      }
+
+      console.log(removeTwoEggs(['egg', 'apple', 'egg', 'egg', 'ham']));
+
+    </script>
+  </body>
+</html>

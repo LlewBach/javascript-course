@@ -5,6 +5,7 @@
   </head>
   <body>
     <script>
+      /*
       const nums = [10, 20, 30];
       nums[2] = 99;
       console.log(nums);
@@ -134,6 +135,83 @@
         return answer;
       }
       console.log(countWords(['apple', 'grape', 'apple', 'apple']));
+      */
+     /*
+      const myArray = ['hello', 'world', 'how you doin?', 'search', 'search'];
+      function findIndex(array, word) {
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] === word) {
+            return i;
+          }
+        }
+        return -1;
+      }
+      console.log(findIndex(myArray, 'cat'));
+      */
+
+      /*
+      function removeEgg(foods) {
+        const foodsCopy = foods.splice();
+        const reversedFoods = foodsCopy.reverse();
+        const egglessArr = [];
+        let eggCounter = 0;
+        for (let i = 0; i < reversedFoods.length; i++) {
+          if (reversedFoods[i] === 'egg' && eggCounter < 2) {
+            eggCounter++;
+            continue;
+          }
+          egglessArr.push(reversedFoods[i]);
+        }
+        return egglessArr.reverse();
+      }
+
+      const foods1 = ['egg', 'apple', 'egg', 'egg', 'ham'];
+      removeEgg(foods1);
+      console.log(foods1);
+      */
+      /*
+      function fizzBuzz() {
+        for (let i = 1; i <= 20; i++) {
+          let output = i;
+          if (i % 3 === 0) {
+            output = 'Fizz';
+          }
+          if (i % 5 === 0) {
+            output = 'Buzz';
+          }
+          if (i % 3 === 0 && i % 5 === 0) {
+            output = 'FizzBuzz';
+          }
+          console.log(output);
+        }
+      }
+      fizzBuzz();
+      */
+
+      const myArray = ['hello', 'world', 'how you doin?', 'search', 'search'];
+      function findIndex(array, word) {
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] === word) {
+            return i;
+          }
+        }
+        return -1;
+      }
+      console.log(findIndex(myArray, 'search'));
+
+      function unique(array) {
+        let result = [];
+        for (let i = 0; i < array.length; i++) {
+          if (findIndex(array, array[i]) === i) {
+            result.push(array[i]);
+          }
+        }
+        return result;
+      } 
+      console.log(unique(['hello', 'world', 'cat', 'how you doin?', 'search', 'search', 'cat']));
+      console.log(unique(['green', 'red', 'blue', 'red']));
+      console.log(unique(['red', 'green', 'green', 'red']));
+      
 
     </script>
   </body>
